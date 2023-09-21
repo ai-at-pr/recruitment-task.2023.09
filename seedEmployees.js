@@ -2,29 +2,19 @@ import faker from "faker";
 import { ulid } from "ulid";
 
 const DEPARTMENTS = [
-  { name: "Development", id: 1 },
-  { name: "Marketing", id: 2 },
-  { name: "Accounting", id: 3 },
-  { name: "HR", id: 4 },
-  { name: "None", id: 5 },
+  { name: "Development", id: ulid() },
+  { name: "Marketing", id: ulid() },
+  { name: "Accounting", id: ulid() },
+  { name: "HR", id: ulid() },
+  { name: "None", id: ulid() },
 ];
 
-const DEFAULT_SEED_AMOUNT = 25;
-const LOCALSTORAGE_KEY = "employees";
+const DEFAULT_SEED_AMOUNT = 50;
 faker.locale = "en_GB";
-faker.phone.phoneNumberFormat('e164')
+faker.phone.phoneNumberFormat("e164");
 
-export function seedEmployees() {
-  const generatedEmployeeArr = generateEmployeeArray(DEFAULT_SEED_AMOUNT);
-  customSetLocalStorage(generatedEmployeeArr);
-}
-
-function customSetLocalStorage(dataObj) {
-  localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(dataObj));
-}
-
-function generateEmployeeArray(length) {
-  return new Array(length).fill(null).map((_) => generateEmployee());
+function generateEmployeeList(listAmount) {
+  return new Array(listAmount).fill(null).map(() => generateEmployee());
 }
 
 function generateEmployee() {
@@ -43,3 +33,7 @@ function generateEmployee() {
   };
 }
 
+export function seedEmployees() {
+  const generatedEmployeeArr = generateEmployeeList(DEFAULT_SEED_AMOUNT);
+  customSetLocalStorage(generatedEmployeeArr);
+}
