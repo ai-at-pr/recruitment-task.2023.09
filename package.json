@@ -1,0 +1,23 @@
+{
+  "name": "recruitment-task.2023.09.21",
+  "version": "1.0.0",
+  "description": "At Perceptual Robotics we usually work on features vertically through the stack, from the backend methods to the frontend UIs.",
+  "main": "seedEmployees.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/perceptual-robotics/reporting-group/recruitment-task.2023.09.21.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/perceptual-robotics/reporting-group/recruitment-task.2023.09.21/issues"
+  },
+  "homepage": "https://gitlab.com/perceptual-robotics/reporting-group/recruitment-task.2023.09.21#readme",
+  "dependencies": {
+    "faker": "^6.6.6",
+    "ulid": "^2.3.0"
+  }
+}
